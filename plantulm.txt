@@ -1,0 +1,79 @@
+# PlantUML Editor
+
+1. select template
+2. write uml diagram
+
+@startuml
+
+ Trama  <--  Prenda
+Material <--  Prenda
+
+ 
+Prenda <.. Borrador
+
+
+Prenda --> Color
+Prenda --> Color
+
+TipoPrenda <-- Prenda
+
+
+TipoPrenda --> Categoria
+
+
+
+
+enum Color{
+ROJO
+AMARILLO
+etc..
+}
+
+
+
+class Prenda{
+Color colorPrincipal
+Color colorSecundario
+  Categoria categoria()
+}
+
+class Borrador{
+  TipoPrenda Tipo
+  Material material
+  Color colorPrimario
+  COlor colorSecundario
+  Trama trama
+  especificarTipo(TipoPrenda)
+  especificarMaterial(Material)
+  especificarColorPrimario(Color)
+  especificarColorSecundario(Color)
+  especificarTrama(Trama)
+  crearPrenda()
+}
+
+enum Material {
+  ALGODON
+  LANA
+  etc...
+}
+
+
+enum Categoria{
+SUPERIOR
+  INFERIOR
+  CALZADO
+  ACCESORIO
+}
+
+class TipoPrenda{
+  Categoria categoria()
+}
+
+enum Trama {
+  Lisa,
+  RAYADA,
+  etc...
+}
+
+
+@enduml
